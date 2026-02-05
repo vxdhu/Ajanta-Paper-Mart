@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+//variables
+$primary :#1A2B4C;
+$secondary : #D4AF37;
+$background : #F9F9F7;
+$accent : #2D5A27;
+$font1: 'Playfair Display', serif;
+$font2 : 'Open Sans',
+sans-serif;
+
+//navar
+.wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.navbar {
+    background-color: $background;
+}
+
+header {
+    text-align: center;
+    // background-color: $background;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 3em;
+
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    li {
+        margin: 0 2em;
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            color: $primary;
+        }
+    }
+}
+
+.cta-btn {
+    background-color: $secondary;
+    color: white;
+    padding: 1em 2em;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: darken($primary, 10%);
+
+    }
+}
+
+/* Footer CSS */
+
+footer {
+    background: $primary;
+    color: #fff;
+    text-align: center;
+    padding: 4em 0;
+    padding-bottom: 0;
+    /* position: fixed; */
+    width: 100%;
+    /* bottom: 0; */
+}
+
+footer .note {
+    margin-top: 3em;
+    background-color: $accent;
+    margin-bottom: 0;
+    padding: 1em 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    width: 400px;
+    text-align: left;
+}
+
+.footer-menu {
+    padding: 0;
+}
+
+.footer-menu li {
+    list-style-type: none;
+    color: white;
+    text-align: left;
+    padding-bottom: 1.25em;
+
+}
+
+.footer-menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+
+    text-align: left;
+}
+
+.footer-left {
+    width: 40%;
+    text-align: left;
+}
+
+.footer-right {
+    width: 30%;
+    text-align: left;
+}
+
+.footer-middle {
+    width: 20%;
+    text-align: left;
+}
+
+.footer-left p {
+    text-align: left;
+    font-size: 12px;
+    margin-top: 2em;
+    width: 400px;
+
+}
+
+.footer-menu img,
+.footer-social img {
+    width: 26px;
+    padding-right: 0.5em;
+}
+
+.footer-menu li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-social {
+    display: flex;
+    padding: 0;
+    align-items: center;
+}
+
+.footer-social li {
+    list-style-type: none;
+    padding-right: 1.25em;
+}
+
+
+// main css
+// 1. Variables
+$navy: #1a2b4c;
+$gold: #d4af37;
+$paper-white: #f9f9f7;
+$text-light: #ffffff;
+$transition: all 0.3s ease;
+$font-primary: 'Montserrat', sans-serif;
+$font-heading: 'Playfair Display', serif;
+
+// 2. Mixins (Reusable styles)
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+// 3. Hero Styles
+.hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    background: url('../images/background\ paper.jpg') no-repeat center center/cover;
+    font-family: $font-primary;
+    @include flex-center;
+
+    &-overlay {
+        position: absolute;
+        inset: 0; // Modern shorthand for top/left/bottom/right: 0
+        background: rgba($navy, 0.5);
+        z-index: 1;
+    }
+
+    &-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        color: $text-light;
+
+        .establishment {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: $gold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        h1 {
+            font-family: $font-heading;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+
+            span {
+                color: $gold;
+            }
+
+            @include mobile {
+                font-size: 2.5rem;
+            }
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+    }
+
+    &-btns {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+}
+
+// 4. Button Components
+.btn {
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: $transition;
+
+    &-primary {
+        background-color: $gold;
+        color: $navy;
+
+        &:hover {
+            background-color: darken($gold, 10%);
+            transform: translateY(-2px);
+        }
+    }
+
+    &-secondary {
+        border: 2px solid $paper-white;
+        color: $paper-white;
+
+        &:hover {
+            background: $paper-white;
+            color: $navy;
+        }
+    }
+}
+
+// Use the variables we defined earlier
+.products {
+    padding: 80px 0;
+    background-color: $paper-white;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-family: $font-heading;
+            font-size: 2.5rem;
+            color: $navy;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: lighten($navy, 20%);
+        }
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); // 4 columns
+        gap: 30px;
+
+        @include mobile {
+            grid-template-columns: repeat(1, 1fr); // Stack on mobile
+        }
+
+        // Medium screens (tablets)
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .product-card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 4px;
+        border-bottom: 3px solid transparent;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: $transition;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            transform: translateY(-10px);
+            border-color: $gold;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: $gold;
+            color: $navy;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-family: $font-heading;
+            font-size: 1.5rem;
+            color: $navy;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .gsm {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: $gold;
+            margin-bottom: 20px;
+        }
+
+        .view-details {
+            text-decoration: none;
+            font-weight: 600;
+            color: $navy;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+
+            &:hover {
+                color: $gold;
+            }
+        }
+    }
+}

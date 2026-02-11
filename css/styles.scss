@@ -23,17 +23,16 @@ sans-serif;
 }
 
 .navbar {
-    background-color: $background;
+    background-color: white;
 }
 
 header {
     text-align: center;
-    // background-color: $background;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1em 3em;
-
+    padding: .75em 3em;
 }
 
 .nav-menu {
@@ -70,6 +69,17 @@ header {
     }
 }
 
+.viewall-btn {
+    background-color: white;
+    border: 2px solid $secondary;
+    color: $secondary;
+    display: block;
+    margin: 0 auto;
+    width: max-content;
+    margin-top: 4em;
+
+}
+
 /* Footer CSS */
 
 footer {
@@ -88,6 +98,7 @@ footer .note {
     background-color: $accent;
     margin-bottom: 0;
     padding: 1em 0;
+    font-size: 14px;
 }
 
 .footer-container {
@@ -96,7 +107,7 @@ footer .note {
 }
 
 .footer-logo {
-    width: 400px;
+    width: 200px;
     text-align: left;
 }
 
@@ -195,13 +206,13 @@ $font-heading: 'Playfair Display', serif;
     position: relative;
     height: 80vh;
     overflow: hidden;
-    background: url('../images/background\ paper.jpg') no-repeat center center/cover;
+    background: url('../images/background.png') no-repeat center center/cover;
     font-family: $font-primary;
     @include flex-center;
 
     &-overlay {
         position: absolute;
-        inset: 0; // Modern shorthand for top/left/bottom/right: 0
+        inset: 0;
         background: rgba($navy, 0.5);
         z-index: 1;
     }
@@ -294,6 +305,9 @@ $font-heading: 'Playfair Display', serif;
 .products {
     padding: 80px 0;
     background-color: $paper-white;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+
 
     .container {
         max-width: 1200px;
@@ -332,6 +346,8 @@ $font-heading: 'Playfair Display', serif;
         }
     }
 
+
+
     .product-card {
         background: #fff;
         padding: 30px;
@@ -347,6 +363,13 @@ $font-heading: 'Playfair Display', serif;
             transform: translateY(-10px);
             border-color: $gold;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            margin: 1em 0;
         }
 
         .product-badge {
@@ -396,4 +419,794 @@ $font-heading: 'Playfair Display', serif;
             }
         }
     }
+}
+
+.knowmore {
+    display: block;
+    margin: 0 auto;
+    color: $primary;
+    margin-top: 2em;
+
+    &:hover {
+        color: $gold;
+    }
+}
+
+.aboutus {
+    background-color: $paper-white;
+    padding: 80px 0;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-header {
+        text-align: center;
+
+        h2 {
+            font-family: $font-heading;
+            font-size: 2.5rem;
+            color: $navy;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: lighten($navy, 20%);
+        }
+    }
+}
+
+.leftalign {
+    padding-top: 2em;
+
+    font-size: 16px;
+    line-height: 1.75em;
+    font-weight: 600;
+
+    span {
+        font-size: 1.25rem;
+        color: $gold;
+        font-weight: 700;
+    }
+
+    ;
+}
+
+.getintouch {
+    background-position: center;
+    background-size: cover;
+    padding: 80px 0;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-family: $font-heading;
+            font-size: 2.5rem;
+            color: $navy;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: lighten($navy, 20%);
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.ctaform {
+    margin-top: 3em;
+
+    input {
+        width: 30%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: $gold;
+        color: white;
+        padding: 12px 30px;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: darken($gold, 10%);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+#banner {
+    height: 35vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: white;
+    background-image: url("../images/bggg.png");
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-blend-mode: overlay;
+
+    .banner-heading {
+        font-size: 60px;
+        color: white;
+        font-family: Bebas Neue;
+        letter-spacing: 5px;
+    }
+}
+
+.contact-wrapper {}
+
+#contact {
+    padding: 5em 0;
+    text-align: center;
+    background-color: $paper-white;
+
+
+
+    .contact-container {
+        display: flex;
+    }
+
+    form {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    label {
+        color: #333;
+    }
+
+    input {
+        color: #333;
+    }
+
+    .submit-btn {
+        color: white;
+    }
+
+    .contact-container {
+        margin-top: 3em;
+    }
+
+    .contact-info {
+        display: grid;
+        width: 50%;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+        justify-content: space-between;
+        margin-top: 3em;
+        margin: 0 auto;
+
+        img {
+            width: 50px;
+        }
+
+        .contact-item {
+            background-color: white;
+            padding: 1.5em;
+            border-radius: 5px;
+
+            img {
+                margin-bottom: 1em;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+
+        .contact-item.map {
+            grid-column: 1/3;
+            padding: 1em;
+        }
+    }
+
+    .contact-form {
+        width: 50%;
+        background-color: white;
+        margin-left: 2em;
+        border-radius: 5px;
+
+
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.submit-btn {
+    background-color: $gold;
+    color: white;
+    font-weight: 500;
+    padding: 1em 3em;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.form-field {
+    position: relative;
+    margin: 32px 0;
+    width: 80%;
+}
+
+.input-text {
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: #000;
+    font-family: "Open Sans", sans-erif;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    background-color: transparent;
+    outline: none;
+    color: whitesmoke;
+}
+
+.label {
+    position: absolute;
+    left: 0px;
+    bottom: 11px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #ffffff;
+    cursor: text;
+    transition: transform .2s ease-in-out;
+}
+
+.contact-form .input-text:focus+.label,
+.contact-form .input-text.not-empty+.label {
+    transform: translateY(-30px);
+}
+
+
+// About Page 
+
+.narrative {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4em 0;
+
+
+
+    h2 {
+        font-family: $font-heading;
+        font-size: 2.5rem;
+        color: $navy;
+        margin-bottom: 50px;
+    }
+
+
+    .leftcol {
+        width: 50%;
+    }
+
+    .right-col {
+        width: 50%;
+        padding-left: 2em;
+        font-size: 16px;
+        line-height: 1.75em;
+        font-weight: 600;
+        color: $primary;
+
+        span {
+            color: $gold;
+            font-weight: 700;
+        }
+    }
+}
+
+.leftcol {
+    img {
+        width: 600px;
+        object-fit: cover;
+    }
+}
+
+
+
+.legacy-section {
+    padding: 80px 0;
+    background: $paper-white;
+
+    h2 {
+        font-family: $font-heading;
+        font-size: 2.5rem;
+        color: $navy;
+        margin-top: 0;
+        // margin-bottom: 1.25em;
+        text-align: center;
+    }
+
+    span {
+        text-align: center;
+        display: block;
+        // font-size: 1.25rem;
+        color: $gold;
+        margin-bottom: 5em;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+
+        // The Vertical Line
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0; // On mobile, line is on the left
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: rgba($gold, 0.5);
+
+            @media (min-width: 768px) {
+                left: 50%; // On desktop, line is center
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 60px;
+
+        @media (min-width: 768px) {
+            width: 50%;
+
+            // Alternate sides for desktop
+            &:nth-child(odd) {
+                left: -37px;
+                padding-right: 40px;
+                text-align: right;
+
+                .timeline-marker {
+                    right: -6px;
+                }
+            }
+
+            &:nth-child(even) {
+                left: 50%;
+                padding-left: 37px;
+                text-align: left;
+
+                .timeline-marker {
+                    left: -8px;
+                }
+            }
+        }
+
+        // The Dot on the line
+        .timeline-marker {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: $navy;
+            border: 2px solid $gold;
+            border-radius: 50%;
+            top: 0;
+
+            @media (max-width: 767px) {
+                left: -6px;
+            }
+        }
+
+        // Mobile specific spacing
+        @media (max-width: 767px) {
+            padding-left: 30px;
+        }
+
+        .era {
+            display: block;
+            color: $gold;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            font-family: $font-heading;
+            color: $navy;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: lighten($navy, 20%);
+            line-height: 1.6;
+        }
+    }
+}
+
+.founder-photos {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid $gold;
+    }
+
+    .photo-item {
+        text-align: center;
+
+
+    }
+}
+
+.expertise {
+    padding: 80px 0;
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-family: $font-heading;
+            font-size: 2.5rem;
+            color: $navy;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: lighten($navy, 20%);
+        }
+    }
+
+    .core-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3em;
+    }
+
+    .core {
+        background-color: white;
+        padding: 2em;
+        border-radius: 5px;
+        text-align: center;
+
+        img {
+            width: 100px;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-family: $font-heading;
+            color: $navy;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: lighten($navy, 20%);
+            line-height: 1.6;
+        }
+    }
+}
+
+// Variables
+$wa-green: #25D366;
+$navy: #1A2B4C;
+$gold: #D4AF37;
+$white: #ffffff;
+$shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+.whatsapp-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    font-family: 'Montserrat', sans-serif;
+
+    // 1. The Floating Button
+    .wa-float-btn {
+        width: 60px;
+        height: 60px;
+        background-color: $wa-green;
+        border-radius: 50%;
+        border: none;
+        box-shadow: $shadow;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        .wa-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .wa-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid $white;
+        }
+    }
+
+    // 2. The Chat Box (Popup)
+    .wa-chat-box {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 320px;
+        background: $white;
+        border-radius: 12px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px) scale(0.95);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    // Header Section
+    .wa-header {
+        background-color: $navy; // Using your brand color instead of generic green
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+
+        .wa-avatar img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid $gold; // Gold accent
+        }
+
+        .wa-head-info {
+            h4 {
+                color: $white;
+                margin: 0;
+                font-size: 16px;
+            }
+
+            .online-status {
+                color: lighten($gold, 20%);
+                font-size: 11px;
+            }
+        }
+
+        .wa-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 24px;
+            cursor: pointer;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    // Body Section
+    .wa-body {
+        padding: 20px;
+        background-color: #f0f2f5; // Standard WA background color
+        background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png"); // WA Doodle opacity
+        min-height: 150px;
+
+        .wa-message-bubble {
+            background: $white;
+            padding: 12px 15px;
+            border-radius: 0 12px 12px 12px;
+            font-size: 14px;
+            color: #333;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            position: relative;
+            line-height: 1.4;
+
+            .wa-time {
+                display: block;
+                text-align: right;
+                font-size: 10px;
+                color: #999;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    // Footer Section
+    .wa-footer {
+        padding: 15px;
+        background: $white;
+        border-top: 1px solid #eee;
+
+        .wa-btn-send {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 90%;
+            background-color: $wa-green;
+            color: $white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background 0.3s;
+
+            &:hover {
+                background-color: darken($wa-green, 5%);
+            }
+        }
+    }
+}
+
+// Mobile Responsiveness
+@media (max-width: 480px) {
+    .whatsapp-widget {
+        right: 20px;
+        bottom: 20px;
+
+        .wa-chat-box {
+            width: 280px;
+        }
+    }
+}
+
+.inventory {
+    padding: 80px 0;
+    background-color: $paper-white;
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-family: $font-heading;
+            font-size: 2.5rem;
+            color: $navy;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: lighten($navy, 20%);
+        }
+    }
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 5em;
+    }
+
+    .products-card {
+
+        padding: 1em;
+        background-color: white;
+        padding-bottom: 1em;
+        border-radius: 10px;
+        transition: $transition;
+        border-bottom: 3px solid transparent;
+
+        &:hover {
+            transform: translateY(-10px);
+            border-color: $gold;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-family: $font-heading;
+            color: $navy;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: rgb(63, 63, 63);
+            line-height: 1.6;
+            font-size: 14px;
+
+            span {
+                font-weight: 600;
+                color: $navy;
+            }
+        }
+
+        button {
+            margin-top: 2em;
+            margin-bottom: 0;
+            display: block;
+            width: 100%;
+            background-color: $paper-white;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
+            text-transform: capitalize;
+            border-radius: 10px;
+            font-weight: 700;
+            color: $gold;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $gold;
+                color: white;
+            }
+        }
+    }
+
+
+}
+
+.bgcol {
+    background-color: $paper-white;
 }

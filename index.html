@@ -14,7 +14,12 @@
             <div class="logo">
                 <a href="index.html"> <img src="images/ajantalogo.png" alt="Ajanta Paper Mart" width="125px"></a>
             </div>
-            <nav>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="navMenu">
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
@@ -22,7 +27,7 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <button class="cta-btn">
+            <button class="cta-btn" onclick="openQuoteModal()">
                 Request a Quote
             </button>
         </header>
@@ -38,8 +43,8 @@
                     over four decades.</p>
 
                 <div class="hero-btns">
-                    <a href="#products" class="btn btn-primary">Explore Products</a>
-                    <a href="#contact" class="btn btn-secondary">Request Quote</a>
+                    <a href="products.html" class="btn btn-primary">Explore Products</a>
+                    <a href="javascript:void(0);" onclick="openQuoteModal()" class="btn btn-secondary">Request Quote</a>
                 </div>
             </div>
         </section>
@@ -127,7 +132,7 @@
                         packaging, our team is here to help. With decades of industry experience, we ensure you get the
                         best quality at competitive rates.</p>
                     <form class="ctaform" action="/">
-                        <input type="phone" placeholder="Enter your phone number" required>
+                        <input type="tel" placeholder="Enter your phone number" required>
                         <button type="submit" class="btn btn-primary">Get in touch</button>
                     </form>
                 </div>
@@ -135,6 +140,33 @@
 
         </section>
 
+
+        <!-- Quote Request Modal -->
+        <div id="quoteModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Request a Quote</h2>
+                    <button class="modal-close" id="closeModal">&times;</button>
+                </div>
+                <form id="quoteForm" class="quote-form">
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number*</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productSelect">Select Product*</label>
+                        <select id="productSelect" name="product" required>
+                            <option value="">-- Choose a product --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity (in units)*</label>
+                        <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" min="1" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+                </form>
+            </div>
+        </div>
 
     </main>
     <footer>
@@ -228,6 +260,26 @@
             chatBox.classList.toggle('active');
         }
 
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when a link is clicked
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+
         // Optional: Auto-open the chat after 5 seconds to prompt the user
         setTimeout(() => {
             // Only open if the user hasn't closed it before (optional complex logic)
@@ -238,6 +290,8 @@
             }
         }, 5000); 
     </script>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

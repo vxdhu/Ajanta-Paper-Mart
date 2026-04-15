@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Products - Ajanta Paper Mart Private Limited</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/products.js"></script>
 </head>
 
 <body>
@@ -14,15 +15,20 @@
             <div class="logo">
                 <a href="index.html"> <img src="images/ajantalogo.png" alt="Ajanta Paper Mart" width="125px"></a>
             </div>
-            <nav>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="navMenu">
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="gallery.html">Products</a></li>
+                    <li><a href="products.html">Products</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <button class="cta-btn">
+            <button class="cta-btn" onclick="openQuoteModal()">
                 Request a Quote
             </button>
         </header>
@@ -42,38 +48,40 @@
                     <h2>Inventory</h2>
                     <p>Comprehensive Paper Inventory for Every Industry.</p>
                 </div>
-                <div class="products-container">
-                    <div class="products-card">
-                        <img src="images/duplex_board 1.png" alt="Duplex Board">
-                        <h3>Duplex Board (LWC / HWC)</h3>
-                        <p>Coated Grey Back board with a printable white surface.</p>
-                        <br>
-                        <p><span>Uses : </span>FMCG packaging, pharmaceutical cartons, and garment boxes.</p>
-                        <p><Span>Specs : </Span> 230 GSM – 450 GSM</p>
-                        <button>request quote &rarr;</button>
-                    </div>
-                    <div class="products-card">
-                        <img src="images/grey_board 1.png" alt="Duplex Board">
-                        <h3>Grey Board (Solid Board)</h3>
-                        <p>A dense, 100% recycled board known for its high stiffness and smooth finish.</p>
-                        <br>
-                        <p><span>Uses : </span>Rigid boxes, bookbinding, and calendar stands.</p>
-                        <p><Span>Specs : </Span> High caliper/thickness 1mm - 4mm</p>
-                        <button>request quote &rarr;</button>
-                    </div>
-                    <div class="products-card">
-                        <img src="images/duplex_board 1.png" alt="Duplex Board">
-                        <h3>Kraft Board</h3>
-                        <p>Strong, brown-faced board made from recycled pulp. High bursting strength for industrial use.</p>
-                        <br>
-                        <p><span>Uses : </span>Corrugated boxes, heavy-duty cartons, and liners.</p>
-                        <p><Span>Specs : </Span> 120 GSM – 300 GSM. 18 BF – 24 BF.</p>
-                        <button>request quote &rarr;</button>
-                    </div>
+                <div class="products-container" id="productsContainer">
+                    <!-- Products will be dynamically loaded here -->
                 </div>
 
             </section>
         </div>
+
+        <!-- Quote Request Modal -->
+        <div id="quoteModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Request a Quote</h2>
+                    <button class="modal-close" id="closeModal">&times;</button>
+                </div>
+                <form id="quoteForm" class="quote-form">
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number*</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productSelect">Select Product*</label>
+                        <select id="productSelect" name="product" required>
+                            <option value="">-- Choose a product --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity (in units)*</label>
+                        <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" min="1" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+                </form>
+            </div>
+        </div>
+
     </main>
 
 
@@ -164,6 +172,26 @@
         </button>
     </div>
     <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when a link is clicked
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+
         function toggleChat() {
             const chatBox = document.getElementById('waChatBox');
             chatBox.classList.toggle('active');
@@ -177,8 +205,9 @@
             if (!chatBox.classList.contains('active')) {
                 chatBox.classList.add('active');
             }
-        }, 5000); 
+        }, 5000);
     </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -32,9 +32,9 @@ const products = [
         tag: "Premium"
     },
     {
-        name: "Kuppa Board",
+        name: "Kappa Board",
         description: "Specialized board with excellent printability and stiffness for various applications.",
-        image_src: "images/kappa_board.png",
+        image_src: "images/kappaBoard.png",
         uses: "Bakery boxes, food packaging, and display boxes.",
         specs: "180 GSM – 280 GSM",
         tag: "Top Rated"

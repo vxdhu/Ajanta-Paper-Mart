@@ -65,18 +65,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
+            // Show loading state
+            const submitBtn = quoteForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            // Send to WhatsApp FIRST
+            const whatsappNumber = '9654544040';
+            const message = encodeURIComponent(
+                `New Enquiry - ${product}\n\n` +
+                `📱 Phone: ${phoneNumber}\n` +
+                `📦 Product: ${product}\n` +
+                `📊 Quantity: ${quantity}`
+            );
+            const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=${message}`;
+            
+            // Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
+            
             // Send data to backend
             const formData = new FormData();
             formData.append('phoneNumber', phoneNumber);
             formData.append('product', product);
             formData.append('quantity', quantity);
             formData.append('timestamp', new Date().toLocaleString());
-            
-            // Show loading state
-            const submitBtn = quoteForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Submitting...';
-            submitBtn.disabled = true;
             
             fetch('save-quote.php', {
                 method: 'POST',
@@ -99,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 if (data.success) {
-                    alert('Quote request submitted successfully! We will contact you soon.');
+                    alert('Quote request submitted successfully!');
                     closeQuoteModal();
                     quoteForm.reset();
                 } else {

@@ -944,6 +944,12 @@ $font-heading: 'Playfair Display', serif;
             color: lighten($navy, 20%);
             width: 80%;
             margin: 0 auto;
+            margin-bottom: 2em;
+        }
+
+        a.btn {
+            margin-top: 1.5em;
+            display: inline-block;
         }
 
         @media (max-width: 768px) {
@@ -2379,9 +2385,13 @@ $shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
     @media (max-width: 480px) {
+        .modal {
+            padding: 10px;
+        }
+
         .modal-content {
             padding: 1.5em;
-            width: 98%;
+            width: 100%;
             max-width: 100%;
             border-radius: 8px;
         }

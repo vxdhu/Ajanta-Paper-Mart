@@ -793,6 +793,12 @@ footer .note {
   color: #345698;
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 2em;
+}
+
+.getintouch .section-header a.btn {
+  margin-top: 1.5em;
+  display: inline-block;
 }
 @media (max-width: 768px) {
   .getintouch .section-header {
@@ -2062,9 +2068,13 @@ footer .note {
 }
 
 @media (max-width: 480px) {
+  .modal {
+    padding: 10px;
+  }
+
   .modal .modal-content {
     padding: 1.5em;
-    width: 98%;
+    width: 100%;
     max-width: 100%;
     border-radius: 8px;
   }
